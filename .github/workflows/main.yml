@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Добавьте этот блок, если у вас есть тесты
+      # Tests
       #- name: Run tests
       #  run: npm test
 

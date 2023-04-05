@@ -1,9 +1,9 @@
 {
   "name": "@gthrm/deep-diff",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A library for comparing nested objects and arrays to find the difference",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c rollup.config.mjs",
     "minify": "terser dist/index.js -o dist/index.min.js",
     "test": "jest"
   },
@@ -11,7 +11,6 @@
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/gthrm/deep-diff"

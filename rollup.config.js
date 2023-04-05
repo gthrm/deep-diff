@@ -15,7 +15,7 @@ export default {
     {
       file: 'dist/index.umd.js',
       format: 'umd',
-      name: 'differ'
+      name: 'deepdiff'
     }
   ],
   plugins: [typescript({ tsconfig: './tsconfig.json' }), terser()]

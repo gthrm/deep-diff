@@ -6,11 +6,13 @@ export default {
   output: [
     {
       file: 'dist/index.cjs.js',
-      format: 'cjs'
+      format: 'cjs',
+      name: '@gthrm/deep-diff'
     },
     {
       file: 'dist/index.esm.js',
-      format: 'esm'
+      format: 'esm',
+      name: '@gthrm/deep-diff'
     },
     {
       file: 'dist/index.umd.js',

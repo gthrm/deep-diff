@@ -1,5 +1,5 @@
 {
-  "name": "deepdiff",
+  "name": "@gthrm/deep-diff",
   "version": "1.0.0",
   "description": "",
   "scripts": {

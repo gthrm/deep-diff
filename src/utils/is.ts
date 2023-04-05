@@ -8,5 +8,20 @@ export function is<T>(
   type: new (...args: never[]) => T,
   value: unknown
 ): value is T {
+  if (Array.isArray(value)) {
+    return type.name === "Array";
+  }
+
+  if (typeof value === "number") {
+    return type.name === "Number";
+  }
+
+  if (typeof value === "string") {
+    return type.name === "String";
+  }
+
+  if (value?.constructor?.name) {
+    return value.constructor.name === type.name;
+  }
   return value instanceof type;
 }

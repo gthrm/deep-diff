@@ -67,9 +67,7 @@ export function getDeepDifference<T extends Record<string, unknown>>(
         val2 as NestedEntity<T>
       );
       if (!isEmpty(nestedDiff)) {
-        if (diff[key]) {
-          (diff[key] as NestedEntity<T>) = nestedDiff;
-        }
+        (diff[key] as NestedEntity<T>) = nestedDiff;
       }
     } else if (is(Array, val1) && is(Array, val2)) {
       // If both values are arrays, calculate the difference between the arrays and add it to the diff object if not empty

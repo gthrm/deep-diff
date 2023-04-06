@@ -11,9 +11,9 @@ function isEntityWithId(obj: any): obj is EntityWithId {
 /**
  * @function getDeepDifference
  * @description Calculates the deep difference between two objects or arrays of objects.
- * @param {ArrayOrObject<T>} prevEntity - The previous object or array of objects.
- * @param {ArrayOrObject<T>} newEntity - The new object or array of objects.
- * @returns {ArrayOrObject<T>} The deep difference between prevEntity and newEntity.
+ * @param {T | T[] | unknown} prevEntity - The previous object or array of objects.
+ * @param {T | T[] | unknown} newEntity - The new object or array of objects.
+ * @returns {T | T[] | unknown} The deep difference between prevEntity and newEntity.
  * @template T
  */
 export function getDeepDifference<T extends Record<string, unknown>>(

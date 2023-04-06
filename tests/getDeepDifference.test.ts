@@ -9,6 +9,142 @@ describe("getDeepDifference", () => {
     expect(getDeepDifference(obj1, obj2)).toEqual(expected);
   });
 
+  test("should return deep difference between two different arrays with equal values", () => {
+    const data1 = [
+      {
+        id: "id1",
+        level1: {
+          level2_1: {
+            level3_1: {
+              level4_1: {
+                level5_1: "value1",
+                level5_2: 42,
+                level5_3: true,
+              },
+              level4_2: [
+                "value2",
+                {
+                  level5_4: "value3",
+                },
+              ],
+            },
+            level3_2: [
+              {
+                level4_3: {
+                  level5_5: "value4",
+                  level5_6: false,
+                },
+              },
+              [
+                {
+                  level5_7: 15,
+                },
+              ],
+            ],
+          },
+          level2_2: [
+            {
+              level3_3: {
+                level4_4: {
+                  level5_8: "value5",
+                },
+              },
+            },
+            [
+              {
+                level3_4: {
+                  level4_5: [
+                    {
+                      level5_9: "value6",
+                    },
+                  ],
+                },
+              },
+            ],
+          ],
+        },
+      },
+    ];
+
+    const data2 = [
+      {
+        id: "id1",
+        level1: {
+          level2_1: {
+            level3_1: {
+              level4_1: {
+                level5_1: "value1",
+                level5_2: 42,
+                level5_3: true,
+              },
+              level4_2: [
+                "value2",
+                {
+                  level5_4: "value3",
+                },
+              ],
+            },
+            level3_2: [
+              {
+                level4_3: {
+                  level5_5: "value4",
+                  level5_6: false,
+                },
+              },
+              [
+                {
+                  level5_7: 15,
+                },
+              ],
+            ],
+          },
+          level2_2: [
+            {
+              level3_3: {
+                level4_4: {
+                  level5_8: "value5",
+                },
+              },
+            },
+            [
+              {
+                level3_4: {
+                  level4_5: [
+                    {
+                      level5_9: "Hello!",
+                    },
+                  ],
+                },
+              },
+            ],
+          ],
+        },
+      },
+    ];
+
+    const expectResult = [
+      {
+        id: 'id1',
+        level1: {
+          level2_2: [
+            [
+              {
+                level3_4: {
+                  level4_5: [
+                    {
+                      level5_9: "Hello!",
+                    },
+                  ],
+                },
+              },
+            ],
+          ],
+        },
+      },
+    ];
+    expect(getDeepDifference(data1, data2)).toEqual(expectResult);
+  });
+
   test("should return deep difference between two arrays", () => {
     const arr1 = [
       { id: 1, value: "a" },

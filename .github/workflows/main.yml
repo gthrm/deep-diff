@@ -26,8 +26,8 @@ jobs:
         run: npm run build
 
       # Tests
-      #- name: Run tests
-      #  run: npm test
+      - name: Run tests
+        run: npm test
 
       - name: Publish to NPM
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

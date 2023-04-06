@@ -1,5 +1,5 @@
 // jest.config.js
-const config = {
+module.exports = {
   testEnvironment: 'node',
   roots: ['<rootDir>/tests'],
   transform: {
@@ -8,5 +8,3 @@ const config = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx|js)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node']
 }
-
-export default config
